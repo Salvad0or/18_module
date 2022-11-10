@@ -1,20 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace _18_module.Factory_Method.Abonement
+﻿namespace _18_module.Factory_Method.Abonement
 {
-    internal class MemberShipWitchPersonalTrainer
+    /// <summary>
+    /// Абонимент с персональным тренером
+    /// </summary>
+    internal class MemberShipWitchPersonalTrainer : IMemberShip
     {
-        public string Name { get; } = "MemrShipWithPersonalTrainer";
+        
+        public string AbonementName { get; } = "MemrShipWithPersonalTrainer";
+
+        public string ClientName { get; set; }
 
         public decimal Price { get; set; }
-        public DateTime TimeOfAction { get; set; }
 
-        public MemberShipWitchPersonalTrainer(decimal price)
+        public MemberShipWitchPersonalTrainer(decimal price,string clientname)
         {
             Price = price;
-            TimeOfAction = DateTime.Now;
+            ClientName = clientname;
         }
     }
 }

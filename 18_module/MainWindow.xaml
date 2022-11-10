@@ -3,9 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:_18_module.View"
         xmlns:local="clr-namespace:_18_module"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+
+    <Window.DataContext>
+        <vm:MainWindowViewModel/>
+    </Window.DataContext>
+
     <Grid>
         <TabControl Margin="4">
             <TabItem Header="The first task">
@@ -17,28 +23,58 @@
                     </Grid.ColumnDefinitions>
 
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="163*"/>
-                        <RowDefinition Height="102*"/>
+                        <RowDefinition Height="177*"/>
+                        <RowDefinition Height="88*"/>
                         <RowDefinition Height="133*"/>
                     </Grid.RowDefinitions>
 
                     <GroupBox Header="Add the aboniment">
                         <StackPanel>
-                            <Button Height="25" 
+
+                            <StackPanel>
+                                <TextBlock Text="Введите имя клиента:"/>
+                                <TextBox Width="150"
+                                         HorizontalAlignment="Left"
+                                         Margin="0 7 0 0"
+                                         Text="{Binding ClientName, UpdateSourceTrigger=PropertyChanged}"/>
+
+                                <TextBlock Text="Введите цену абонемента:"/>
+                                <TextBox Width="150"
+                                         HorizontalAlignment="Left"
+                                         Margin="0 7 0 0"
+                                         Text="{Binding AbonementPrice,UpdateSourceTrigger=PropertyChanged}"/>
+
+                                <TextBlock Text="Выберите опции:"
+                                           Margin=" 0 5 "/>
+
+
+                            </StackPanel>
+
+
+
+                            <StackPanel Orientation="Horizontal"
+                                        HorizontalAlignment="Left">
+
+                                <Button Height="25" 
                                     Width="85" 
-                                    Margin="10"
+                                    Margin="2"
                                     Content="Base"
-                                    />
-
-                            <Button Height="25" 
+                                        Command="{Binding SimpleAbonementCommand}"/>
+                                    
+                                <Button Height="25" 
                                     Width="88" 
-                                    Margin="10"
-                                    Content="With Pool"/>
+                                    Margin="10 0"
+                                    Content="With Pool"
+                                    Command="{Binding WithPollAbonementCommand}"/>
 
-                            <Button Height="25" 
+                                <Button Height="25" 
                                     Width="88" 
-                                    Margin="10"
-                                    Content="With Trainer"/>
+                                    Margin="0"
+                                    Content="With Trainer"
+                                    Command="{Binding WithTrainerAbonementCommand}"/>
+                                
+                            </StackPanel>
+
 
 
                         </StackPanel>

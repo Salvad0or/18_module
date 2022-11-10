@@ -1,21 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace _18_module.Factory_Method.Abonement
 {
+    /// <summary>
+    /// Абонемент простой
+    /// </summary>
     internal class SimpleMemberShip : IMemberShip
     {
+        
+        public string AbonementName { get; } = "SimpleMemberShip";
 
-        public string Name { get; } = "SimpleMemberShip";
+        public string ClientName { get; set; }
 
         public decimal Price { get; set; }
-        public DateTime TimeOfAction { get; set; }
+        
 
-        public SimpleMemberShip(decimal price)
-        { 
+        public SimpleMemberShip(decimal price, string clientName)
+        {
             Price = price;
-            TimeOfAction = DateTime.Now;
+            ClientName = clientName;
         }
     }
 }
