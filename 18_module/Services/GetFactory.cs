@@ -9,7 +9,13 @@ namespace _18_module.Services
 {
     internal class GetFactory
     {
-
+        /// <summary>
+        /// Здесь мы записываем новый абонимент в базу данных
+        /// </summary>
+        /// <param name="abonementName"></param>
+        /// <param name="price"></param>
+        /// <param name="clientName"></param>
+        /// <returns></returns>
         public static async Task ReturnFactoryClass(string abonementName, decimal price, string clientName)
         {
             MembershipFactories membership = GetFactoryPrivateMethod(abonementName, price, clientName);
@@ -26,6 +32,13 @@ namespace _18_module.Services
 
         }
 
+        /// <summary>
+        /// Здесь получаем информацию, какой тип конкретно нам записать в базу
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="price"></param>
+        /// <param name="clientName"></param>
+        /// <returns></returns>
         private static MembershipFactories GetFactoryPrivateMethod(string name, decimal price, string clientName)
         {
             switch (name)

@@ -81,6 +81,51 @@
 
                     </GroupBox>
 
+                    <GroupBox Header="SaveData"
+                              Grid.Row="0"
+                              Grid.Column="1"
+                              Margin="5 0 0 0">
+                        <StackPanel>
+                            <TextBlock Text="Введите имя файла :"/>
+                            <TextBox Width="150"
+                                     HorizontalAlignment="Left"
+                                     Margin="0 5"
+                                     Text="{Binding FileName, UpdateSourceTrigger=PropertyChanged}"/>
+
+                            <GroupBox Header="Выберите тип файла:"
+                                      Margin="0 5"
+                                      Width="280"
+                                      Height="70"
+                                      HorizontalAlignment="Left">
+
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Width="75"
+                                            Height="25"
+                                            Content="TXT"
+                                            Margin="5"
+                                            Command="{Binding TxtSaverCommand}"/>
+                                    
+                                    <Button Width="75"
+                                            Height="25"
+                                            Content="PDF"
+                                            Margin="5"
+                                            Command="{Binding PdfSaverCommand}"/>
+                                    
+                                    <Button Width="75"
+                                            Height="25"
+                                            Content="XLSX"
+                                            Margin="5"
+                                            Command="{Binding XlsxSaverCommand}"/>
+
+
+                                </StackPanel>
+                                
+                            </GroupBox>
+                            
+                        </StackPanel>
+                        
+                    </GroupBox>
+
                 </Grid>
 
             </TabItem>

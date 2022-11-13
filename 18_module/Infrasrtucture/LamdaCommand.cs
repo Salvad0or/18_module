@@ -4,6 +4,9 @@ using System.Text;
 
 namespace _18_module.Infrasrtucture
 {
+    /// <summary>
+    /// Через этот класс мы создаем все команды
+    /// </summary>
     internal class LamdaCommand : BaseCommand
     {
 

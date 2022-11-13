@@ -6,6 +6,9 @@ using System.Text;
 
 namespace _18_module.View
 {
+    /// <summary>
+    /// класс для реализации MVVM
+    /// </summary>
     internal class ViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
